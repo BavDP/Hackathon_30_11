@@ -5,18 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.hackathon_30_11.adapters.WorkerListAdapter
+import com.example.hackathon_30_11.databinding.FragmentWorkerListBinding
+import com.example.hackathon_30_11.model.Worker
+import com.example.hackathon_30_11.mvp.workerList.WorkerListContract
+import com.example.hackathon_30_11.mvp.workerList.WorkerListModel
+import com.example.hackathon_30_11.mvp.workerList.WorkerListResenter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val User_LOGIN = "userLogin"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [WorkerListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class WorkerListFragment : Fragment() {
+class WorkerListFragment : Fragment(), WorkerListContract.View {
     private var userLogin: String = "";
+    private var represent: WorkerListContract.Represent = WorkerListResenter(this, WorkerListModel())
+    private lateinit var _binding: FragmentWorkerListBinding;
+    private val binding: FragmentWorkerListBinding
+        get() = _binding;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +31,23 @@ class WorkerListFragment : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        represent.getWorkerList(userLogin)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_worker_list, container, false)
+        _binding = FragmentWorkerListBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun showWorkerList(workerList: List<Worker>) {
+        val recycleList = binding.workerListView
+        recycleList.adapter = WorkerListAdapter(workerList)
+        recycleList.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
     }
 
     companion object {
