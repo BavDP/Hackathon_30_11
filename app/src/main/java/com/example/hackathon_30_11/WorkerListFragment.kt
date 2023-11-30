@@ -11,7 +11,7 @@ import com.example.hackathon_30_11.databinding.FragmentWorkerListBinding
 import com.example.hackathon_30_11.model.Worker
 import com.example.hackathon_30_11.mvp.workerList.WorkerListContract
 import com.example.hackathon_30_11.mvp.workerList.WorkerListModel
-import com.example.hackathon_30_11.mvp.workerList.WorkerListResenter
+import com.example.hackathon_30_11.mvp.workerList.WorkerListRepresent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,7 +19,7 @@ private const val User_LOGIN = "userLogin"
 
 class WorkerListFragment : Fragment(), WorkerListContract.View {
     private var userLogin: String = "";
-    private var represent: WorkerListContract.Represent = WorkerListResenter(this, WorkerListModel())
+    private var represent: WorkerListContract.Represent = WorkerListRepresent(this, WorkerListModel())
     private lateinit var _binding: FragmentWorkerListBinding;
     private val binding: FragmentWorkerListBinding
         get() = _binding;
