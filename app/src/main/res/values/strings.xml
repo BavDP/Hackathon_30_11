@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Hackathon_30_11</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Hackathon (30.11)</string>
+    <string name="regLogin">Enter your login</string>
+    <string name="regPassword">Enter your password</string>
+    <string name="regPasswordVerify">Enter your password again</string>
+    <string name="regFragmentTitle">Registration form</string>
+    <string name="registrationBtnCaption">Submit</string>
 </resources>

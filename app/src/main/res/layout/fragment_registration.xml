@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RegistrationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/regFragmentTitleTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/fragmentTitle"
+            android:text="@string/regFragmentTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regLoginTextInput"
+            style="@style/margins"
+            app:layout_constraintTop_toBottomOf="@id/regFragmentTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/regLogin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPasswordTextInput"
+            style="@style/margins"
+            app:layout_constraintTop_toBottomOf="@id/regLoginTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+
+            android:hint="@string/regPassword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPasswordVerifyTextInput"
+            style="@style/margins"
+            app:layout_constraintTop_toBottomOf="@id/regPasswordTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+            android:hint="@string/regPasswordVerify">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            style="@style/margins"
+            android:id="@+id/registrationBtn"
+            app:layout_constraintTop_toBottomOf="@id/regPasswordVerifyTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrationBtnCaption"
+             />
+
+        <TextView
+            android:id="@+id/regFragmentErrorMessageTextView"
+            app:layout_constraintTop_toBottomOf="@id/registrationBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/errorMessage"
+            tools:text="Error message" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
