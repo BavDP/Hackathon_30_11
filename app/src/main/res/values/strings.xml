@@ -6,4 +6,6 @@
     <string name="regFragmentTitle">Registration form</string>
     <string name="registrationBtnCaption">Submit</string>
     <string name="workerListFragmentTitle">Worker list</string>
+    <string name="workerPhoto">Photo of worker</string>
+    <string name="workerDetails">Show details</string>
 </resources>

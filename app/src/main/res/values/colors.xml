@@ -3,4 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="errorText">#E73939</color>
+    <color name="trustLevelGreat">#648D6E</color>
+    <color name="trustLevelGood">#AFAE75</color>
+    <color name="trustLevelBad">#976161</color>
 </resources>

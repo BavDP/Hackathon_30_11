@@ -46,8 +46,18 @@ class WorkerListFragment : Fragment(), WorkerListContract.View {
 
     override fun showWorkerList(workerList: List<Worker>) {
         val recycleList = binding.workerListView
-        recycleList.adapter = WorkerListAdapter(workerList)
+        recycleList.adapter = WorkerListAdapter(workerList) {
+            gotoWorkerDetailFragment(it)
+        }
         recycleList.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+    }
+
+    private fun gotoWorkerDetailFragment(workerId: Int) {
+        parentFragmentManager.beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(R.id.fragmentContainerView, WorkerDetailsFragment.newInstance(workerId))
+            .addToBackStack("")
+            .commit()
     }
 
     companion object {

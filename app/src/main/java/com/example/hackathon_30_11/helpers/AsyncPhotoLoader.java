@@ -1,4 +1,4 @@
-package com.dnipro.beldii.lesson10.helpers;
+package com.example.hackathon_30_11.helpers;
 
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
