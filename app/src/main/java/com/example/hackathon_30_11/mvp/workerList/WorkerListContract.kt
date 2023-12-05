@@ -4,7 +4,7 @@ import com.example.hackathon_30_11.model.Worker
 
 interface WorkerListContract {
     interface View {
-        fun showWorkerList(list: List<Worker>)
+        fun showWorkerList(workerList: List<Worker>)
     }
 
     interface Model {
@@ -13,5 +13,6 @@ interface WorkerListContract {
 
     interface Represent {
         fun getWorkerList(userLogin: String)
+        fun isUserRegistered(): Boolean
     }
 }

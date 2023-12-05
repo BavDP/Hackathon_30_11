@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hackathon_30_11.R
 import com.example.hackathon_30_11.helpers.AsyncPhotoLoader
@@ -16,7 +17,7 @@ import com.google.android.material.card.MaterialCardView
 class WorkerListAdapter(private val workers: List<Worker>, val btnClick: (workerId: Int) -> Unit): RecyclerView.Adapter<WorkerListAdapter.ViewHolder>() {
 
     class ViewHolder(private val view: View, private val btnClick: (workerId: Int) -> Unit): RecyclerView.ViewHolder(view) {
-        public fun bind(worker: Worker) {
+        fun bind(worker: Worker) {
             val name: TextView = view.findViewById<TextView>(R.id.workerNameInList)
             val company: TextView = view.findViewById<TextView>(R.id.workerCompany)
             val photo: ImageView = view.findViewById<ImageView>(R.id.workerPhoto)
@@ -31,16 +32,17 @@ class WorkerListAdapter(private val workers: List<Worker>, val btnClick: (worker
             when (worker.trustLevel) {
                 TrustLevel.TRUST_GREAT -> {
                     card.setCardBackgroundColor(view.resources.getColor(R.color.trustLevelGreat, null))
-                    trustSmile.setImageDrawable(view.resources.getDrawable(R.drawable.sentiment_very_satisfied, null))
+                    trustSmile.setImageDrawable(ResourcesCompat.getDrawable(view.resources, R.drawable.sentiment_very_satisfied, null))
                 }
                 TrustLevel.TRUST_GOOD -> {
                     card.setCardBackgroundColor(view.resources.getColor(R.color.trustLevelGood, null))
-                    trustSmile.setImageDrawable(view.resources.getDrawable(R.drawable.sentiment_satisfied, null))
+                    trustSmile.setImageDrawable(ResourcesCompat.getDrawable(view.resources, R.drawable.sentiment_satisfied, null))
                 }
                 TrustLevel.TRUST_BAD -> {
                     card.setCardBackgroundColor(view.resources.getColor(R.color.trustLevelBad, null))
-                    trustSmile.setImageDrawable(view.resources.getDrawable(R.drawable.mood_bad, null))
+                    trustSmile.setImageDrawable(ResourcesCompat.getDrawable(view.resources, R.drawable.mood_bad, null))
                 }
+                else -> {}
             }
             detailBtn.setOnClickListener{_ -> btnClick(worker.id)}
         }
@@ -48,12 +50,12 @@ class WorkerListAdapter(private val workers: List<Worker>, val btnClick: (worker
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): WorkerListAdapter.ViewHolder {
+    ): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.worker_list_item, parent, false)
         return ViewHolder(view, btnClick)
     }
 
-    override fun onBindViewHolder(holder: WorkerListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(workers.get(position))
     }
 

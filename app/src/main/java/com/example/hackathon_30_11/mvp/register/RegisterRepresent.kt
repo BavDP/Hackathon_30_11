@@ -1,7 +1,7 @@
 package com.example.hackathon_30_11.mvp.register
 
 class RegisterRepresent(val view: RegistrationFormContract.View): RegistrationFormContract.Represent {
-    private val model = RegisterModel()
+    private val model = RegisterModel
     override fun registerButtonClick(
         login: String,
         password: String,
@@ -9,7 +9,7 @@ class RegisterRepresent(val view: RegistrationFormContract.View): RegistrationFo
     ): Boolean {
             // выполняем проверку данных от формы регистрации и если что-то не так, то
             // посылаем вьюшке сообщение об ошибке
-            var errorMsg: String = "";
+            var errorMsg = ""
             if (login.isEmpty()) errorMsg = "Login is required!"
             else if (password.isEmpty()) errorMsg = "Password is required"
             else if (passwordVerify.isEmpty()) errorMsg = "The password must be repeated to verify it"

@@ -3,7 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="errorText">#E73939</color>
-    <color name="trustLevelGreat">#648D6E</color>
-    <color name="trustLevelGood">#AFAE75</color>
-    <color name="trustLevelBad">#976161</color>
+    <color name="trustLevelGreat">#9DC3A6</color>
+    <color name="trustLevelGood">#BDBD91</color>
+    <color name="trustLevelBad">#B68E8E</color>
+    <color name="trustLevelGreat_dark">#4D6052</color>
+    <color name="trustLevelGood_dark">#7A7A61</color>
+    <color name="trustLevelBad_dark">#7A6161</color>
 </resources>

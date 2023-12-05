@@ -4,8 +4,14 @@
     <string name="regPassword">Enter your password</string>
     <string name="regPasswordVerify">Enter your password again</string>
     <string name="regFragmentTitle">Registration form</string>
+    <string name="loginTitle">Login form</string>
     <string name="registrationBtnCaption">Submit</string>
+    <string name="loginBtnCaption">LogIn</string>
     <string name="workerListFragmentTitle">Worker list</string>
     <string name="workerPhoto">Photo of worker</string>
     <string name="workerDetails">Show details</string>
+    <string name="workerDetailsSaveBtn">Save trust level</string>
+    <string name="workerDetailsCancelBtn">Cancel</string>
+    <string name="workerTrustIcon">Worker trust icon</string>
+    <string name="workerDetailsTrustEditCaption">Select new trust level of worker:</string>
 </resources>
