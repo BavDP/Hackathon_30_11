@@ -1,6 +1,6 @@
 package com.example.hackathon_30_11.mvp.register
 
-object RegisterModel: RegistrationFormContract.Model {
+object RegisterModel: RegisterFormContract.Model {
     private var userLogin: String = ""
     private var  userPassword: String = ""
     override fun saveUserRegistrationData(login: String, password: String) {

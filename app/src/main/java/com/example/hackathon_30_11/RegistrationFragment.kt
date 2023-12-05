@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.hackathon_30_11.databinding.FragmentRegistrationBinding
 import com.example.hackathon_30_11.mvp.register.RegisterRepresent
-import com.example.hackathon_30_11.mvp.register.RegistrationFormContract
+import com.example.hackathon_30_11.mvp.register.RegisterFormContract
 
-class RegistrationFragment : Fragment(), RegistrationFormContract.View {
-    private lateinit var represent: RegistrationFormContract.Represent;
+class RegistrationFragment : Fragment(), RegisterFormContract.View {
+    private lateinit var represent: RegisterFormContract.Represent
     private lateinit var _binding: FragmentRegistrationBinding
     private val binding: FragmentRegistrationBinding
-        get() = _binding;
+        get() = _binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.represent = RegisterRepresent(this)
@@ -30,15 +30,15 @@ class RegistrationFragment : Fragment(), RegistrationFormContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.registrationBtn.setOnClickListener { view ->  doSubmitUserRegisterData()}
+        binding.registrationBtn.setOnClickListener { _ ->  doSubmitUserRegisterData()}
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         this._binding = FragmentRegistrationBinding.inflate(inflater)
-        return _binding.root;
+        return _binding.root
     }
 
     private fun doSubmitUserRegisterData() {

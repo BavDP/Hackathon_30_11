@@ -1,6 +1,6 @@
 package com.example.hackathon_30_11.mvp.register
 
-class RegisterRepresent(val view: RegistrationFormContract.View): RegistrationFormContract.Represent {
+class RegisterRepresent(val view: RegisterFormContract.View): RegisterFormContract.Represent {
     private val model = RegisterModel
     override fun registerButtonClick(
         login: String,
