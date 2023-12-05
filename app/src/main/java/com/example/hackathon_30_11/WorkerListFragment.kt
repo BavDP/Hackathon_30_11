@@ -48,6 +48,7 @@ class WorkerListFragment : Fragment(), WorkerListContract.View {
                         .replace(R.id.fragmentContainerView, LoginFragment.newInstance())
                         .commit()
                 }
+                isEnabled = false
             }
         })
     }
